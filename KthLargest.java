@@ -10,10 +10,11 @@ Intuition: We can use a min-heap (priority queue) to efficiently find the k-th l
 
 public class KthLargest {
     public int findKthLargest(int[] nums, int k) {
-        PriorityQueue<Integer> minHeap = new PriorityQueue<>((a, b) -> Integer.compare(b, a));
+        PriorityQueue<Integer> minHeap = new PriorityQueue<>((a, b) -> Integer.compare(a, b));
 
         for (int i = 0; i < nums.length; i++) {
             minHeap.add(nums[i]);
+
             if (minHeap.size() > k) {
                 minHeap.poll();
             }
